@@ -5,8 +5,9 @@ import java.util.Scanner
 fun main() {
     val scanner = Scanner(System.`in`)
 
-    while (scanner.hasNext()) {
+    while (true) {
         val input = scanner.nextLine()
+        if (input.equals(".")) return
         println(
             if (readOneLine(input))
                 "yes"
@@ -23,7 +24,7 @@ fun readOneLine(input: String): Boolean {
         when (char) {
             '(' -> stack.add(')')
             '[' -> stack.add(']')
-            ')', ']' -> if(!popStack(stack, char)) return false
+            ')', ']' -> if (!popStack(stack, char)) return false
         }
     }
 
