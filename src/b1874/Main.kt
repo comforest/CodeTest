@@ -1,5 +1,6 @@
 package b1874
 
+import b13549.InvalidException
 import java.util.Scanner
 
 val stack = mutableListOf<Int>()
@@ -15,30 +16,30 @@ fun main() {
         repeat(n) {
             val input = scanner.nextInt()
             if (input > prev)
-                push(input)
+                b13549.push(input)
             else
-                pop(input)
+                b13549.pop(input)
 
             prev = input
         }
-        print.forEach(::println)
+        b13549.print.forEach(::println)
     } catch (e: InvalidException) {
         println("NO")
     }
 }
 
 fun push(n: Int) {
-    while (index <= n) {
-        print.add('+')
-        stack.add(index++)
+    while (b13549.index <= n) {
+        b13549.print.add('+')
+        b13549.stack.add(b13549.index++)
     }
-    pop(n)
+    b13549.pop(n)
 }
 
 fun pop(n: Int) {
-    if(stack.isEmpty() || stack.last() != n) throw InvalidException
-    print.add('-')
-    stack.removeLast()
+    if(b13549.stack.isEmpty() || b13549.stack.last() != n) throw InvalidException
+    b13549.print.add('-')
+    b13549.stack.removeLast()
 }
 
 object InvalidException : Exception()
