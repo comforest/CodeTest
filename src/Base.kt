@@ -17,3 +17,7 @@ fun next(): String {
 
     return st!!.nextToken()
 }
+
+fun nextInt(): Int {
+    return next().toInt()
+}
