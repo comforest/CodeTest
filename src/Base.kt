@@ -8,7 +8,7 @@ private val br = BufferedReader(InputStreamReader(System.`in`))
 private var st: StringTokenizer? = null
 private var input: String = ""
 
-fun next(): String {
+private fun next(): String {
     if (st == null || st!!.hasMoreTokens().not()) {
 
         input = br.readLine()
@@ -18,6 +18,6 @@ fun next(): String {
     return st!!.nextToken()
 }
 
-fun nextInt(): Int {
+private fun nextInt(): Int {
     return next().toInt()
 }

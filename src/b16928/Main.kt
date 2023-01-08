@@ -49,7 +49,7 @@ data class Data(
     val move: Int,
 )
 
-fun next(): String {
+private fun next(): String {
     if (st == null || st!!.hasMoreTokens().not()) {
 
         input = br.readLine()
@@ -59,6 +59,6 @@ fun next(): String {
     return st!!.nextToken()
 }
 
-fun nextInt(): Int {
+private fun nextInt(): Int {
     return next().toInt()
 }

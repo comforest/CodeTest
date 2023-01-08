@@ -50,7 +50,7 @@ private fun dfs(v: Int, graph: List<List<Int>>, answer: IntArray) {
     }
 }
 
-fun next(): String {
+private fun next(): String {
     if (st == null || st!!.hasMoreTokens().not()) {
         input = br.readLine()
         st = StringTokenizer(input, " ");
@@ -59,6 +59,6 @@ fun next(): String {
     return st!!.nextToken()
 }
 
-fun nextInt(): Int {
+private fun nextInt(): Int {
     return next().toInt()
 }

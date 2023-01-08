@@ -1,8 +1,7 @@
-package b11866
+package `b1024`
 
 import java.io.BufferedReader
 import java.io.InputStreamReader
-import java.util.LinkedList
 import java.util.StringTokenizer
 
 private val br = BufferedReader(InputStreamReader(System.`in`))
@@ -10,27 +9,28 @@ private var st: StringTokenizer? = null
 private var input: String = ""
 
 fun main() {
-    val n = nextInt()
-    val k = nextInt()
+    val sum = nextInt()
+    val length = nextInt()
 
-    print("<")
-
-    val list = LinkedList<Int>()
-    repeat(n){
-        list.add(it+1)
-    }
-
-    while (list.size > 1){
-        repeat(k - 1){
-            val n = list.pop()
-            list.add(n)
+    for (i in length..100) {
+        if(sum / i - (i - 1) / 2 < 0) continue
+        if (i % 2 == 1) {
+            if (sum % i == 0) {
+                printAnswer(sum / i - (i - 1) / 2, i)
+                return
+            }
+        } else if (sum % i == i / 2) {
+            printAnswer(sum / i - (i - 1) / 2, i)
+            return
         }
-        print("${list.pop()}, ")
     }
+    println(-1)
+}
 
-    print(list.last)
-
-    print(">")
+fun printAnswer(a: Int, n: Int) {
+    repeat(n) {
+        print("${a + it} ")
+    }
 }
 
 private fun next(): String {
